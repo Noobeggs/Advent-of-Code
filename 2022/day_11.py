@@ -49,11 +49,21 @@ class Monkey():
     def add_item(self, item):
         self.items.append(item)
 
-    def test_worry(self, worry, lcm) -> int:
+    def test_worry(self, worry, lcm=None) -> int:
+        if lcm:
+            worry %= lcm
         if worry % self.test == 0:
-            return self.true, worry % lcm
+            next = self.true
         else:
-            return self.false, worry % lcm
+            next = self.false
+
+        return next, worry
+
+    def test_worry_one(self, worry) -> int:
+        if worry % self.test == 0:
+            return self.true, worry
+        else:
+            return self.false, worry
 
     def add(self, worry) -> int:
         if type(self.operand) is int:
@@ -104,11 +114,11 @@ def part_one():
     
     inspect_count = [0] * len(apes)
     for n in range(20):
-        print(n)
+        # print(n)
         for i, monkey in enumerate(apes):
-            print("monkey number:", i)
+            # print("monkey number:", i)
             while monkey.items:
-                print(len(monkey.items))
+                # print(len(monkey.items))
                 inspect_count[i] += 1
                 worry = monkey.inspect()
                 pass_to, item = monkey.test_worry(worry)
@@ -116,6 +126,7 @@ def part_one():
 
     sorted_count = sorted(inspect_count)
     monkey_business = sorted_count[-1] * sorted_count[-2]
+    print(monkey_business)
     return monkey_business
 
 def part_two():
@@ -150,6 +161,7 @@ def part_two():
     sorted_count = sorted(inspect_count)
     monkey_business = sorted_count[-1] * sorted_count[-2]
     print(sorted_count[-1], sorted_count[-2])
+    print(monkey_business)
     return monkey_business
 
 aoc_lube.submit(year=2022, day=11, part=1, solution=part_one)
