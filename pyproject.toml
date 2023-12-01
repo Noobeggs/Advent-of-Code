@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-aoc-lube = "^0.2.4"
+aoc-lube = "^0.2.6"
 
 
 [build-system]
