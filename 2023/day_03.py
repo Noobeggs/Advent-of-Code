@@ -64,15 +64,11 @@ def is_symbol(x):
 #                 # Start of new number
 #                 is_num = True
 #                 int_str = c
-#             # elif c.isdigit() and is_num and has_symbol:
-#             #     int_str += c
 #             elif ((x == x_len-1 and is_number(c)) or not is_number(c)) and is_num and has_symbol:
 #                 # End of number or line, update parts
 #                 is_num = x == x_len-1 and is_number(c)
 #                 has_symbol = False if not is_number(c) else has_symbol
-#                 print(int_str)
-#                 # print(y, x)
-#                 # parts.add(int(int_str))
+
 #                 sum += int(int_str)
 #                 int_str = ""
 #             elif not is_number(c):
@@ -90,7 +86,6 @@ def is_symbol(x):
 #                         break
 #                 if x == x_len-1:
 #                     # if last column lol
-#                     # parts.add(int(int_str))
 #                     sum += int(int_str)
 #     return sum #519922 WRONG 323955 WRONG 324015 WRONG 520224 WRONG
 
