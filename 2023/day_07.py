@@ -33,12 +33,6 @@ def check_hand(hand):
         # High card
         return 1
     
-def sort_hands_by_cards(hands, index):
-    
-    sorted_hands = []
-    cards = hands.sort()
-    hands.sort(key=lambda x: x[index])
-    
 def part_one():
     sum = 0
     ranks = collections.defaultdict(list)
