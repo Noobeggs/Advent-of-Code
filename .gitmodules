@@ -1,0 +1,3 @@
+[submodule "OCaml"]
+	path = OCaml
+	url = https://github.com/Noobeggs/AdventOfCode-OCaml
